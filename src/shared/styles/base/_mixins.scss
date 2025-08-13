@@ -1,0 +1,56 @@
+@use "sass:math";
+
+@function adaptiveSize($minSize, $maxSize, $minWidth: $minWidth, $maxWidth: $maxWidth) {
+    $c: $maxSize - $minSize;
+    $d: $maxWidth - $minWidth;
+    $change: math.div($c, $d);
+    $a: #{$maxSize - $maxWidth * $change};
+    $b: #{100 * $change};
+    @return clamp(#{$minSize}px, (#{$a}px + #{$b}vw), #{$maxSize}px);
+}
+
+%flex-jcsb-aic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%flex-jcsb {
+    display: flex;
+    justify-content: space-between;
+}
+
+%flex-aic {
+    display: flex;
+    align-items: center;
+}
+
+%flex-c-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-fdc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%flex-fdc-aic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%flex-jcsa {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: adaptiveSize(5, 15);
+    row-gap: adaptiveSize(75, 105);
+}
+
+%mb-20 {
+    margin-bottom: 20px;
+}
