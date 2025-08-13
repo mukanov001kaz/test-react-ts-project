@@ -1,5 +1,7 @@
 @use "sass:math";
 
+@use "./vars" as *;
+
 @function adaptiveSize($minSize, $maxSize, $minWidth: $minWidth, $maxWidth: $maxWidth) {
     $c: $maxSize - $minSize;
     $d: $maxWidth - $minWidth;

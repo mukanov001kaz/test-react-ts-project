@@ -1,1 +1,35 @@
+@use "./base/reset";
+@use "./base/font";
+@use "./base/vars";
+@use "./base/mixins";
+
 @use "./components/header";
+
+html,
+body {
+    font-family: "Montserrat", sans-serif;
+
+    // overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    @media (max-width: 1470px) {
+        max-width: 1200px;
+    }
+    @media (max-width: 1200px) {
+        max-width: 960px;
+    }
+    @media (max-width: 992px) {
+        max-width: 720px;
+    }
+    @media (max-width: 768px) {
+        max-width: 540px;
+    }
+    @media (max-width: 576px) {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
