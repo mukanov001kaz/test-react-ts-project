@@ -7,7 +7,8 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "deploy": "gh-pages -d dist"
+        "deploy": "gh-pages -d dist",
+        "commit-deploy": "git add . && git commit -m \"$msg\" && git push && npm run build && npm run deploy"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.8.2",

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import CounterList from "../widgets/counter-list/CounterList";
-import viteLogo from "@/shared/assets/vite.svg";
-import { useGetCountryQuery } from "../shared/api/country-api";
+import { useGetCountriesQuery } from "../shared/api/country-api";
+
+import CountryList from "../widgets/country-list/CountryList";
+import CountryFilterByRegion from "../features/CountryFilterByRegion/CountryFilterByRegion";
+
 import "@/shared/styles/App.scss";
 
 function App() {
-    const { data, isLoading, error } = useGetCountryQuery();
+    const { data, isLoading, error } = useGetCountriesQuery();
 
     return (
         <>
-            <h1>Hello React</h1>
-            <img className="header" src={viteLogo} alt="" />
-            <img src={viteLogo} alt="" />
-            {isLoading ? <p>Loadind...</p> : <CounterList data={data} />}
+            <div>{isLoading ? <p>Loadind...</p> : <CountryList data={data} />}</div>
+            <CountryFilterByRegion />
         </>
     );
 }

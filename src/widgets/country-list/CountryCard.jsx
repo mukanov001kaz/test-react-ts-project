@@ -1,6 +1,6 @@
 import React from "react";
 
-const CounterCard = ({ item }) => {
+const CountryCard = ({ item }) => {
     const { name, flags } = item;
     console.log(item);
 
@@ -12,4 +12,4 @@ const CounterCard = ({ item }) => {
     );
 };
 
-export default CounterCard;
+export default CountryCard;
