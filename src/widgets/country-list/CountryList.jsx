@@ -10,10 +10,12 @@ const CountryList = ({ data }) => {
     const totalPages = Math.ceil((data?.length || 0) / itemsPerPage);
 
     return (
-        <div className="container counter__list">
-            {currentData.map((item, index) => (
-                <CountryCard key={index} item={item} />
-            ))}
+        <div className="container ">
+            <div className="country__list">
+                {currentData.map((item, index) => (
+                    <CountryCard key={index} item={item} />
+                ))}
+            </div>
             <div>
                 {Array.from({ length: totalPages }, (_, i) => (
                     <button key={i} onClick={() => setCurrentPage(i + 1)} disabled={currentPage === i + 1}>

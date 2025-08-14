@@ -12,7 +12,7 @@ const countryApi = createApi({
     endpoints: (builder) => ({
         // Все страны
         getCountries: builder.query<Country[], void>({
-            query: () => `all?fields=cca3,name,flags,region`,
+            query: () => `all?fields=cca3,name,flags,region,population`,
         }),
 
         // По коду

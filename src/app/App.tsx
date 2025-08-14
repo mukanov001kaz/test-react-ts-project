@@ -8,6 +8,7 @@ import "@/shared/styles/App.scss";
 
 function App() {
     const { data, isLoading, error } = useGetCountriesQuery();
+    console.log(data);
 
     return (
         <>
